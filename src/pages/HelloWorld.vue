@@ -4,6 +4,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import {useCounterStore} from "stores/example-store";
+import CustomButton from "components/CustomButton.vue";
 
   const mainText = ref("Hello World");
 
@@ -18,6 +19,10 @@ import {useCounterStore} from "stores/example-store";
   const counterStore = useCounterStore();
 
   console.log(counterStore.counter);
+
+  const handleClick = () => {
+    alert('Button clicked!');
+  };
 
 </script>
 
@@ -38,6 +43,16 @@ import {useCounterStore} from "stores/example-store";
     <p>카운터 더블 {{counterStore.doubleCount}}</p>
     <button @click="counterStore.increment()">증가시키기</button>
   </div>
+
+  <div>
+    <h6>Custom Component</h6>
+    <CustomButton
+      text="Click Me"
+      :onClick="handleClick"
+      @click="handleClick"
+    />
+  </div>
+
 </template>
 
 <style scoped>
