@@ -9,13 +9,13 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: 'click'): void;
+  (e: 'event'): void;
 }>();
 
 </script>
 
 <template>
-  <button @click="() => { emit('click'); props.onClick(); }">
+  <button @click="() => { emit('event'); props.onClick(); }">
     {{ props.text }}
   </button>
 </template>

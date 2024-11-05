@@ -24,6 +24,10 @@ import CustomButton from "components/CustomButton.vue";
     alert('Button clicked!');
   };
 
+  const emitEvent = () => {
+    console.log('emitEvent');
+  }
+
 </script>
 
 <template>
@@ -49,7 +53,7 @@ import CustomButton from "components/CustomButton.vue";
     <CustomButton
       text="Click Me"
       :onClick="handleClick"
-      @click="handleClick"
+      @event="emitEvent"
     />
   </div>
 
