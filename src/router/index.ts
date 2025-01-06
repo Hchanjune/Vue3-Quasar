@@ -17,6 +17,8 @@ import routes from './routes'
  * with the Router instance.
  */
 
+// Quasar Is Not That Good.
+
 export default route(function (/* { store, ssrContext } */) {
   const createHistory = process.env.SERVER
     ? createMemoryHistory
